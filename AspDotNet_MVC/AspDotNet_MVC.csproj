@@ -1,0 +1,114 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.20">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.20">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\AnhSanPham\#productphotography.jpg" />
+    <None Include="wwwroot\AnhSanPham\179ad40e-70a7-4615-881d-0a5ddf77663f.jpg" />
+    <None Include="wwwroot\AnhSanPham\2.jpg" />
+    <None Include="wwwroot\AnhSanPham\3c5ae92b-134a-4d66-a627-25b0724fcc8d.jpg" />
+    <None Include="wwwroot\AnhSanPham\7ef31e84-80fd-449c-ac12-f4ebe93fbb0a.jpg" />
+    <None Include="wwwroot\AnhSanPham\anhnenmo.jpg" />
+    <None Include="wwwroot\AnhSanPham\Best Indoor Garden Ideas for 2020 - Modern.jpg" />
+    <None Include="wwwroot\AnhSanPham\Calm Pure Radiance Oil.jpg" />
+    <None Include="wwwroot\AnhSanPham\chitiet1.webp" />
+    <None Include="wwwroot\AnhSanPham\chitiet2.webp" />
+    <None Include="wwwroot\AnhSanPham\download %281%29.jpg" />
+    <None Include="wwwroot\AnhSanPham\download.jpg" />
+    <None Include="wwwroot\AnhSanPham\f6b32b8f-356d-40a5-9d05-962f8bb8081e.jpg" />
+    <None Include="wwwroot\AnhSanPham\hoatrang.jpg" />
+    <None Include="wwwroot\AnhSanPham\hoavang.jpg" />
+    <None Include="wwwroot\AnhSanPham\I will create digital art, poster design, social media design.jpg" />
+    <None Include="wwwroot\AnhSanPham\Luxury Botanic Skincare Products.jpg" />
+    <None Include="wwwroot\AnhSanPham\natural fragrance.jpg" />
+    <None Include="wwwroot\AnhSanPham\Oliva Oil Products.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-ash-376464.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-binoid-cbd-3612182.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-gabriel-freytez-341523.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-kristina-paukshtite-3270223.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-laryssa-suaid-1667088.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-laryssa-suaid-3616991.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-luis-quintero-1738641.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-math-90946.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-olena-bohovyk-3693700.jpg" />
+    <None Include="wwwroot\AnhSanPham\pexels-suzy-hazelwood-2533266.jpg" />
+    <None Include="wwwroot\AnhSanPham\PMS Relief.jpg" />
+    <None Include="wwwroot\AnhSanPham\search1.webp" />
+    <None Include="wwwroot\AnhSanPham\search2.webp" />
+    <None Include="wwwroot\AnhSanPham\search3.webp" />
+    <None Include="wwwroot\AnhSanPham\search4.webp" />
+    <None Include="wwwroot\AnhSanPham\search5.webp" />
+    <None Include="wwwroot\AnhSanPham\snaga istinske prirode.jpg" />
+    <None Include="wwwroot\AnhSanPham\sp1.pnj.webp" />
+    <None Include="wwwroot\AnhSanPham\sp2.png" />
+    <None Include="wwwroot\AnhSanPham\sp3.png" />
+    <None Include="wwwroot\AnhSanPham\spring.jpg" />
+    <None Include="wwwroot\AnhSanPham\Superfood Facial Oil.jpg" />
+    <None Include="wwwroot\AnhSanPham\True Botanicals Pure Radiance Oil.jpg" />
+    <None Include="wwwroot\AnhSanPham\tulip🌷flower.jpg" />
+    <None Include="wwwroot\AnhSanPham\uuthich.jpg" />
+    <None Include="wwwroot\AnhSanPham\áp1.png" />
+    <None Include="wwwroot\logo\3.jpg" />
+    <None Include="wwwroot\logo\banner_about_1.webp" />
+    <None Include="wwwroot\logo\banner_about_2.webp" />
+    <None Include="wwwroot\logo\brand_1.webp" />
+    <None Include="wwwroot\logo\brand_2.webp" />
+    <None Include="wwwroot\logo\brand_3.webp" />
+    <None Include="wwwroot\logo\brand_4.webp" />
+    <None Include="wwwroot\logo\brand_5.webp" />
+    <None Include="wwwroot\logo\download.jpg" />
+    <None Include="wwwroot\logo\flora-gorgeous-preview.webp" />
+    <None Include="wwwroot\logo\flowers.jpg" />
+    <None Include="wwwroot\logo\hoaanhdao.jpg" />
+    <None Include="wwwroot\logo\hoatim.jpg" />
+    <None Include="wwwroot\logo\hoatim2.jpg" />
+    <None Include="wwwroot\logo\icon_fra_1.webp" />
+    <None Include="wwwroot\logo\icon_fra_10.webp" />
+    <None Include="wwwroot\logo\icon_fra_2.webp" />
+    <None Include="wwwroot\logo\icon_fra_3.webp" />
+    <None Include="wwwroot\logo\icon_fra_4.webp" />
+    <None Include="wwwroot\logo\icon_fra_6.webp" />
+    <None Include="wwwroot\logo\icon_fra_7.webp" />
+    <None Include="wwwroot\logo\icon_fra_8.webp" />
+    <None Include="wwwroot\logo\icon_fra_9.webp" />
+    <None Include="wwwroot\logo\logoNuocHoa.webp" />
+    <None Include="wwwroot\logo\mancera-cedrat-boise-6698ab0d070-min-removebg-preview.webp" />
+    <None Include="wwwroot\logo\payment_1.webp" />
+    <None Include="wwwroot\logo\payment_2.webp" />
+    <None Include="wwwroot\logo\payment_3.webp" />
+    <None Include="wwwroot\logo\payment_4.webp" />
+    <None Include="wwwroot\logo\phanloai1.webp" />
+    <None Include="wwwroot\logo\phanloai2.webp" />
+    <None Include="wwwroot\logo\phanloai3.webp" />
+    <None Include="wwwroot\logo\slider_1.webp" />
+    <None Include="wwwroot\logo\slider_2.webp" />
+    <None Include="wwwroot\logo\tommy-hilfiger-tommy-girl-786135-removebg-preview.webp" />
+    <None Include="wwwroot\logo\top1.webp" />
+    <None Include="wwwroot\logo\top2.webp" />
+    <None Include="wwwroot\logo\top3.webp" />
+    <None Include="wwwroot\logo\top4.webp" />
+    <None Include="wwwroot\logo\top5.webp" />
+    <None Include="wwwroot\logo\top6.webp" />
+    <None Include="wwwroot\logo\top7.webp" />
+    <None Include="wwwroot\logo\wisal-dhahab-sprayaa1-min.webp" />
+  </ItemGroup>
+
+</Project>
