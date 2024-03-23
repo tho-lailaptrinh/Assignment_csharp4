@@ -28,6 +28,15 @@ namespace AspDotNet_MVC.Controllers
             var data = await _repo.CreateSP(sp);
             return RedirectToAction("Index");
         }
-
+        public IActionResult Update()
+        {
+            return View();
+        }
+        public async Task<IActionResult> UpdateSP(Guid id ,SanPham sp)
+        {
+            //var getId = await _repo.GetById(id);
+            await _repo.UpdateSP(id,sp);
+            return RedirectToAction("Index");
+        }
     }
 }

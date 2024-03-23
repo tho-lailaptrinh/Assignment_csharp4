@@ -26,7 +26,7 @@ namespace AspDotNet_MVC.Repositorys
                 Ten = sp.Ten,
                 Gia = sp.Gia,
                 SoLuong = sp.SoLuong,
-                IdDMSP = Guid.NewGuid(),
+                IdDMSP = sp.IdDMSP,
             };
             _context.SanPhams.Add(sanpham);
              await _context.SaveChangesAsync();
@@ -34,7 +34,7 @@ namespace AspDotNet_MVC.Repositorys
         }
         public async Task<SanPham> UpdateSP(Guid id, SanPham sp)
         {
-            var updateSP = await _context.SanPhams.FirstOrDefaultAsync(x => x.Id == id);
+            var updateSP = await  _context.SanPhams.FindAsync(id);
             updateSP.Ten = sp.Ten;
             updateSP.Gia = sp.Gia;
             updateSP.SoLuong = sp.SoLuong;
@@ -45,12 +45,17 @@ namespace AspDotNet_MVC.Repositorys
         }
         public async Task<SanPham> DeleteSP(Guid id)
         {
-            var deleteSP = await _context.SanPhams.FirstOrDefaultAsync(x => x.Id == id);
+            var deleteSP = await _context.SanPhams.FindAsync(id);
             _context.SanPhams.Remove(deleteSP);
             await _context.SaveChangesAsync();
             return deleteSP;
               
         }
 
+        public async Task<SanPham> GetById(Guid id)
+        {
+            var getId = await _context.SanPhams.FindAsync(id);
+            return getId;
+        }
     }
 }

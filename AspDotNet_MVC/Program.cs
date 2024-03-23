@@ -11,9 +11,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<ISanPhamRepo, SanPhamRepo>();
-//builder.Services.AddTransient<IUserRepo, UserRepo>();
-//builder.Services.AddScoped<ISanPhamRepo, SanPhamRepo>();
-//builder.Services.AddScoped<ISanPhamRepo, SanPhamRepo>();
+builder.Services.AddTransient<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IGioHangRepo, GioHangRepo>();
+builder.Services.AddScoped<IGioHangChiTietRepo, GioHangChiTietRepo>();
 //builder.Services.AddScoped<ISanPhamRepo, SanPhamRepo>();
 
 //builder.Services.AddAutoMapper(x => x.AddProfile(new MappingConfigProfile()));
