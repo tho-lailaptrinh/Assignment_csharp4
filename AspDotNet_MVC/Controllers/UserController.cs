@@ -22,7 +22,19 @@ namespace AspDotNet_MVC.Controllers
         } 
         public async Task<IActionResult> CreateUser(User u)
         {
-             await _userRepo.CreateUser(u);
+            //var users = await _userRepo.GetAllUser();
+            //var user = users.FirstOrDefault(x => x.UserName == u.UserName);
+            if (await _userRepo.UserExists(u.UserName))
+            {
+                ModelState.AddModelError("UserName", "Tên người dùng đã tồn tại!");
+            }
+            if (!ModelState.IsValid)
+            {
+                // Nếu có lỗi, trả về View "Create" với ModelState để hiển thị thông báo lỗi
+                return View("Create", u);
+            }
+
+            await _userRepo.CreateUser(u);
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> Update(Guid id)
@@ -56,9 +68,16 @@ namespace AspDotNet_MVC.Controllers
             var user = users.FirstOrDefault(p => p.UserName == username && p.Password == password);
             if (user != null)
             {
-                return RedirectToAction("Index","Home");
+                HttpContext.Session.SetString("username",username);
+                return RedirectToAction("Welcome","User");
             }
             return Content("Đăng nhập thất bại");
+        }
+        public IActionResult Welcome()
+        {
+            ViewBag.Message = "Đăng nhập thành công";
+            ViewBag.Message2 = HttpContext.Session.GetString("username");
+            return View();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace AspDotNet_MVC.Repositorys
         }
         public async Task<User> CreateUser(User u)
         {
+        
             User user = new User()
             {
                 Name = u.Name,
@@ -38,7 +39,11 @@ namespace AspDotNet_MVC.Repositorys
 
         public async Task<User> UpdateUser(Guid id, User u)
         {
-                var bom = _context.Users.FirstOrDefault(x => x.Id == id);
+            if (await _context.Users.AnyAsync(x => x.UserName == u.UserName && x.Id != id))
+            {
+                throw new InvalidOperationException("Tên người dùng đã tồn tại."); // Ném ngoại lệ hoặc xử lý thông báo lỗi theo yêu cầu của bạn
+            }
+            var bom = _context.Users.FirstOrDefault(x => x.Id == id);
                 bom.Name = u.Name;
                 bom.UserName = u.UserName;
                 bom.Password = u.Password;
@@ -65,6 +70,11 @@ namespace AspDotNet_MVC.Repositorys
         {
             var getId = await _context.Users.FindAsync(id);
             return getId;
+        }
+
+        public async Task<bool> UserExists(string userName)
+        {
+            return await _context.Users.AnyAsync(x => x.UserName == userName);
         }
     }
 }

@@ -9,5 +9,6 @@ namespace AspDotNet_MVC.IRepositorys
         Task<User> CreateUser(User u);
         Task<User> UpdateUser(Guid id, User u);
         Task<User> DeleteUser(Guid id);
+        Task<bool> UserExists(string userName);
     }
 }

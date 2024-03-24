@@ -9,22 +9,9 @@
     <link rel="stylesheet" href="~/AspDotNet_MVC.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" />
-    <style>
-        .abc:hover {
-            color:brown; /* Màu chữ khi hover */
-        }
-        .bogocSex{
-            border-radius: 40px 0px 40px 0px;
-            color:aliceblue
-        }
-        .bogocSex:hover {
-            background: #ce0082;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
-
+    <link href="css/site.css" rel='stylesheet' type='text/css'/>
 </head>
+
 <body style="background-color:aliceblue">
     <div class="" >
         <header class="bg-danger">
@@ -38,7 +25,7 @@
                     <div class="navbar-collapse collapse d-sm-inline-flex  ">
                         <ul class="navbar-nav flex-grow-1 d-flex justify-content-center ">
                             <li class="nav-item px-3">
-                                <a class="nav-link text-dark font-weight-bold" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                                <a class="nav-link text-dark font-weight-bold" asp-area="" asp-controller="User" asp-action="Welcome">Trang chủ</a>
                             </li>
 
                             <li class="nav-item px-3">
@@ -73,7 +60,7 @@
                             <a class="nav-link  dropdown-toggle dropdown" role="button" data-bs-toggle="dropdown"><i class="fa-brands fa-github"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" asp-controller="User" asp-action="Login">Đăng nhập</a></li>
-                                <li><a class="dropdown-item" href="#scrollspyHeading4">Đăng ký</a></li>
+                                <li><a class="dropdown-item" asp-controller="User" asp-action="Login">Đăng Xuất</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Quản lý người dùng</a></li>
                             </ul>
@@ -83,16 +70,15 @@
             </nav>
         </header>
     </div>
-    
+        
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted" style="background-color:wheat">
         <div class="container">
-            &copy; 2024 - AspDotNet_MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            Welcome to wedsite to me - <a asp-area="" asp-controller="Home" asp-action="Privacy">ThoVu</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

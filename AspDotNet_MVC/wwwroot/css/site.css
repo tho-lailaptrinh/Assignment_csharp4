@@ -16,3 +16,32 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.abc:hover {
+    color: brown; /* Màu ch? khi hover */
+}
+
+.bogocSex {
+    border-radius: 40px 0px 40px 0px;
+    color: aliceblue
+}
+
+    .bogocSex:hover {
+        background: #ce0082;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+.view_more:hover {
+    border-color: #ce0082;
+    color: #fff;
+    background-color: #ce0082;
+}
+
+.view_more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 4px 15px;
+    color: #fff;
+    border-radius: 14px 0px;
+}

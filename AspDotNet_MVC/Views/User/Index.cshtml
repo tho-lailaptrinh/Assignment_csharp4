@@ -12,9 +12,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.Id)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -42,9 +42,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.Id)
-            </td>
+            </td> *@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -67,9 +67,9 @@
                 @Html.DisplayFor(modelItem => item.Role)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Update", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Detail", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                    @Html.ActionLink("Edit", "Update", new { id = item.Id }, new { @class="btn btn-warning"}) 
+                    @Html.ActionLink("Details", "Detail", new { id = item.Id }, new { @class = "btn btn-success" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
 }
