@@ -19,7 +19,9 @@ namespace AspDotNet_MVC.Controllers
         public IActionResult Create()
         {
             return View();
-        } 
+        }
+        [HttpPost] 
+        
         public async Task<IActionResult> CreateUser(User u)
         {
             //var users = await _userRepo.GetAllUser();
@@ -57,6 +59,7 @@ namespace AspDotNet_MVC.Controllers
             var user = await _userRepo.GetById(id);
             return View(user);
         }
+        //Login
         public IActionResult Login()
         {
             return View();

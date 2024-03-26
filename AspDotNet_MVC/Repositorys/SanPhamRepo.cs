@@ -34,7 +34,13 @@ namespace AspDotNet_MVC.Repositorys
         }
         public async Task<SanPham> UpdateSP(Guid id, SanPham sp)
         {
-            var updateSP = await  _context.SanPhams.FindAsync(id);
+            var updateSP = await _context.SanPhams.FirstOrDefaultAsync(x => x.Id == id);
+            if (updateSP == null)
+            {
+                // Xử lý khi sản phẩm không tồn tại, ví dụ: throw exception hoặc trả về một kết quả tùy ý
+                return null;
+            }
+            //var updateSP = await _context.SanPhams.FirstOrDefaultAsync(x=>x.Id == id);
             updateSP.Ten = sp.Ten;
             updateSP.Gia = sp.Gia;
             updateSP.SoLuong = sp.SoLuong;
