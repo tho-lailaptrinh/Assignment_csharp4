@@ -1,0 +1,105 @@
+﻿
+        <div class="row">
+            <div class="col-8 mt-4 ">
+                <div class=" p-1" style="background-color:mediumvioletred    ; border-radius: 17px 0px 0px 0px;">
+                    <strong class="text-white px-4">Nhận quà tặng ngay !!!</strong>
+                </div>
+                <div class="d-flex py-2 px-2" style="background-color:white; border-radius:  0px 0px 19px 0px ;">
+                    <div class="bogocmd bg-white">
+                        <img src="../AnhSanPham/search2.webp" width="85px" class="img-fluid ">
+                    </div>
+                    <div class="mx-3">
+                        <span class="text-dark">Mua tối thiểu <strong class="textcolor">1.117.000đ</strong> để nhận <strong class="textcolor">Hermers H24 Travel Spray - Quà tặng</strong> miễn phí</span>
+                        <span class="view_more mt-2" style="background-color: rgba(128, 128, 128, 0.425);"><i class="fa-solid fa-gift"></i> Nhận ngay</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mt-4">
+        <div class=" p-1" style="background-color: mediumvioletred; border-radius: 17px 0px 0px 0px;">
+                    <strong class="text-white px-4">Thời gian giao hàng !!!</strong>
+                </div>
+                <div>
+            <div style="background-color: white; border-radius:  0px 0px 19px 0px ;">
+                        <div class="d-flex">
+                            <div class="p-2">
+                                <input class="form-control" type="date" placeholder="Ngày nhận" />
+                            </div>
+                            <div class="dropdown p-2">
+                                <input class="form-control dropdown-toggle" id="dropdownMenuButton1" placeholder="Chọn time nhận" data-bs-toggle="dropdown" aria-expanded="false">
+                                </input>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Cả ngày</a></li>
+                                    <li><a class="dropdown-item" href="#">06:00-10:00</a></li>
+                                    <li><a class="dropdown-item" href="#">10:00-14:00</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-1">
+                            <input type="checkbox" name="" id=""> <span class="text-dark px-1">Xuất hóa đơn công ty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row px-2 ">
+            <div class="col rounded-3 mt-4 my-4" style="background-color:beige">
+                <div>
+                    <div class="row border-dark pt-3">
+                        <div class="col-4"><span>Thông tin sản phẩm</span></div>
+                        <div class="col-2">
+                        </div>
+                        <div class="col-2">Đơn giá</div>
+                        <div class="col-2">Số lượng</div>
+                        <div class="col-2">Thành tiền</div>
+                    </div>
+                    <hr>
+                    <div class="row border-dark py-3">
+                        <div class="col-2"><img src="../AnhSanPham/sp2.png" class="" width="80px" alt=""></div>
+                        <div class="col-4 mt-3">
+                            <a href="ChiTietSanPham.html" class="text-decoration-none text-dark">
+                                <span class="mb-3">Unisex Creed Millesime Imperial</span>
+                            </a>
+                            <span class="btn btn-outline-danger">Xóa</span>
+                        </div>
+                        <div class="col-2 mt-3 textcolor"><strong>5.680.000đ</strong></div>
+                        <div class="col-2 mt-3">
+                    <div class="quantity-control rounded border bg-dark text-white d-flex justify-content-between" style="height: 35px;width:140px ">
+                        <button type="button" class="btn btn-outline-light" style="border: none;" onclick="decreaseQuantity()"><i class="fa-solid fa-minus"></i></button>
+                        <input class="bg-dark text-white" type="number" style="border: none; text-align: center; width:50px;" id="quantityInput" value="0" min="0" readonly>
+                        <button type="button" class="btn btn-outline-light" style="border: none;" onclick="increaseQuantity()"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                            <script>
+                                function increaseQuantity() {
+                                    var quantityInput = document.getElementById("quantityInput");
+                                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                                }
+                                function decreaseQuantity() {
+                                    var quantityInput = document.getElementById("quantityInput");
+                                    var currentValue = parseInt(quantityInput.value);
+                                    if (currentValue > 0) {
+                                        quantityInput.value = currentValue - 1;
+                                    }
+                                }
+                            </script>
+                        </div>
+                        <div class="col-2 textcolor mt-3"><strong>5.680.000đ</strong></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row">
+                        <hr>
+                        <div class="col-8"></div>
+                        <div class="col-4">
+                            <div class="d-flex justify-content-between">
+                                <span>Tổng tiền</span>
+                                <span class="textcolor"><strong>5.680.000đ</strong></span>
+                            </div>
+                            <div class="p-2">
+                                <a href="XacNhanDon.html">
+                                    <button class=" view_more btn-outline-dark text-dark border-dark w-100" style="height: 40px; ">Thanh toán</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

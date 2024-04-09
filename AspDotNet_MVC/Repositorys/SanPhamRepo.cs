@@ -26,10 +26,11 @@ namespace AspDotNet_MVC.Repositorys
                 Ten = sp.Ten,
                 Gia = sp.Gia,
                 SoLuong = sp.SoLuong,
+                ImgFile = sp.ImgFile,
                 IdDMSP = sp.IdDMSP,
             };
             _context.SanPhams.Add(sanpham);
-             await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return sanpham;
         }
         public async Task<SanPham> UpdateSP(Guid id, SanPham sp)

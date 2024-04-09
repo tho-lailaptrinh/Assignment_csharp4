@@ -2,9 +2,12 @@
 
 @{
     ViewData["Title"] = "Index";
+    var username = TempData["Username"];
+    var count = (int)ViewData["count"];
 }
 
 <h2>Quản lý người dùng</h2>
+
 
 <p>
     <a asp-action="Create" class="btn btn-outline-primary text-decoration-none float-end">Tạo mới</a>

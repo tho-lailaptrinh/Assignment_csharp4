@@ -15,8 +15,8 @@ namespace AspDotNet_MVC.Repositorys
 
         public async Task<IEnumerable<GioHangChiTiet>> GetGioHangCT()
         {
-            var result = await _context.GioHangChiTiets.ToListAsync();
-            return result;
+            return await _context.GioHangChiTiets.ToListAsync();
+            
         }
         public Task<GioHangChiTiet> CreateGioHangCT(GioHangChiTiet g)
         {

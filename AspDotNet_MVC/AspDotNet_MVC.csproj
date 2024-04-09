@@ -112,4 +112,8 @@
     <None Include="wwwroot\logo\wisal-dhahab-sprayaa1-min.webp" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>

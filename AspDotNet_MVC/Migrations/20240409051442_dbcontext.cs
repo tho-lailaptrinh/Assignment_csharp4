@@ -58,7 +58,7 @@ namespace AspDotNet_MVC.Migrations
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Dob = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -74,6 +74,7 @@ namespace AspDotNet_MVC.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Ten = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
+                    ImgFile = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Gia = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     SoLuong = table.Column<int>(type: "int", nullable: true),
                     IdDMSP = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
@@ -150,6 +151,7 @@ namespace AspDotNet_MVC.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
                     IdSP = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     IdGH = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AspDotNet_MVC.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240322145336_dbcontext")]
+    [Migration("20240409051442_dbcontext")]
     partial class dbcontext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,6 +89,9 @@ namespace AspDotNet_MVC.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
 
                     b.Property<Guid?>("IdGH")
                         .HasColumnType("uniqueidentifier");
@@ -179,6 +182,9 @@ namespace AspDotNet_MVC.Migrations
                     b.Property<Guid?>("IdDMSP")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ImgFile")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("SoLuong")
                         .HasColumnType("int");
 
@@ -258,7 +264,6 @@ namespace AspDotNet_MVC.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Role")

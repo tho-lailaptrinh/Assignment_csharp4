@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<AspDotNet_MVC.Models.Entitis.SanPham>
-
+@inject AspDotNet_MVC.IRepositorys.IDanhMucSPRepo _repo;
 @{
     ViewData["Title"] = "Index";
 }
-
+    
 <h3>Quản lý sản phẩm</h3>
 
 <p>
@@ -19,13 +19,19 @@
                 @Html.DisplayNameFor(model => model.Ten)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ImgFile)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Gia)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SoLuong)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdDMSP)
+               TenDM
+            </th>
+            <th>
+                Amount
             </th>
             <th></th>
         </tr>
@@ -39,6 +45,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Ten)
             </td>
+                <td>
+                    <img src="~/img/@item.ImgFile" width="60px"></img>
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Gia)
             </td>
@@ -46,12 +55,31 @@
                 @Html.DisplayFor(modelItem => item.SoLuong)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdDMSP)
+               @foreach (var dm in await _repo.GetAll())
+                    {
+                        if (dm.Id == item.IdDMSP)
+                        {
+                            @dm.TenDM;
+                            break;
+                        }
+                    }
+                </td>
+            <td>
+                    <form method="post" action="@Url.Action("AddToCart", "SanPham")">
+                        <div class="d-flex">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <div class="form-group">
+                                <input type="text" name="amount" id="amount" class="form-control" />
+                            </div>
+                            <input type="submit" value="Add to Cart" class="btn btn-light" />
+                        </div>
+                    </form>
             </td>
             <td>
                     @Html.ActionLink("Edit", "Update", new { id = item.Id }, new { @class = "btn btn-warning" })
                     @Html.ActionLink("Details", "Detail", new { id = item.Id }, new { @class = "btn btn-success" })
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                   
             </td>
         </tr>
 }

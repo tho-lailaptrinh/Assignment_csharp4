@@ -88,6 +88,9 @@ namespace AspDotNet_MVC.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
                     b.Property<Guid?>("IdGH")
                         .HasColumnType("uniqueidentifier");
 
@@ -177,6 +180,9 @@ namespace AspDotNet_MVC.Migrations
                     b.Property<Guid?>("IdDMSP")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ImgFile")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("SoLuong")
                         .HasColumnType("int");
 
@@ -256,7 +262,6 @@ namespace AspDotNet_MVC.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Role")

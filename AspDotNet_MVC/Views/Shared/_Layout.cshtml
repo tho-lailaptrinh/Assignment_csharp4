@@ -37,7 +37,7 @@
                                     <li><a class="dropdown-item" href="#scrollspyHeading3">Dior</a></li>
                                     <li><a class="dropdown-item" href="#scrollspyHeading4">Roles</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                                    <li><a class="dropdown-item" asp-controller="SanPham" asp-action="Thuonghieu">Tất cả thương hiệu</a></li>
                                 </ul>
                             </li>
                            
@@ -55,12 +55,17 @@
                     <div >
                         <nav class="navbar">
                             <a class="nav-link" asp-controller="User" asp-action="Index"><i class="fa-solid fa-magnifying-glass"></i></a>
-                            <a class="nav-link" asp-controller="User" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a class="nav-link" asp-controller="GioHangChiTiet" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a>
                             <a class="nav-link" asp-controller="User" asp-action="Index"><i class="fa-brands fa-twitter"></i></a>
                             <a class="nav-link  dropdown-toggle dropdown" role="button" data-bs-toggle="dropdown"><i class="fa-brands fa-github"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" asp-controller="User" asp-action="Login">Đăng nhập</a></li>
-                                <li><a class="dropdown-item" asp-controller="User" asp-action="Login">Đăng Xuất</a></li>
+                                <li>
+                                    <form id="logoutForm" method="post" asp-controller="User" asp-action="Logout">
+                                        @Html.AntiForgeryToken()
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="document.getElementById('logoutForm').submit()">Đăng xuất</a>
+                                    </form>
+                                </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Quản lý người dùng</a></li>
                             </ul>

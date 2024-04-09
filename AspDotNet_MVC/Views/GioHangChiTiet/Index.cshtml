@@ -1,0 +1,82 @@
+﻿@model IEnumerable<AspDotNet_MVC.Models.Entitis.GioHangChiTiet>
+@inject AspDotNet_MVC.IRepositorys.ISanPhamRepo _sp;
+@inject AspDotNet_MVC.IRepositorys.IUserRepo _ur;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Giỏ hàng chi tiết</h3>
+<p>
+    <a asp-action="Create" class="btn btn-primary float-end">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           @*  <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th> *@
+            <th>
+                Img Product
+            </th>
+            <th>
+                Name Product
+            </th>
+            <th>
+                Price Product
+            </th>
+            <th>
+               Amount
+            </th>
+            <th>
+                Money
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           @*  <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td> *@
+            <td>
+                @foreach (var sp in await _sp.GetSanPhams())
+                {
+                    @if (sp.Id == item.IdSP)
+                    {
+                        <img src="~/logo/@sp.ImgFile" class="img-fluid" width="60px" />
+                    }
+                }
+            </td>
+            <td>
+                @foreach (var sp in await _sp.GetSanPhams())
+                {
+                    @if (sp.Id == item.IdSP)
+                        @sp.Ten;
+                }
+            </td>
+            <td>
+                @foreach (var sp in await _sp.GetSanPhams())
+                {
+                    @if (sp.Id == item.IdSP)
+                        @sp.Gia
+                    ;
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+               ...
+            </td>
+            <td>
+                    @Html.ActionLink("Buy", "Edit", new { /* id=item.PrimaryKey */}, new {@class = "btn btn-warning" })
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+
+    </tbody>
+</table>
+<a asp-action="ThanhToan" class="btn btn-danger">Thanh Toán</a>
